@@ -3,9 +3,11 @@ import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import App from "./App.jsx";
 import "./index.css";
-import Home from "./components/home/home.jsx";
 import { QueryClient, QueryClientProvider } from "react-query";
-import ProductsPage from "./components/products/index.jsx";
+import ProductsPage from "./pages/products/products-page.jsx";
+import HomePage from "./pages/home-page.jsx";
+import ProductDetailPage from "./pages/products/product-detail-page.jsx";
+import NotFoundPage from "./pages/not-found-page.jsx";
 
 export const queryClient = new QueryClient({
   defaultOptions: {
@@ -26,12 +28,12 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         <App>
           <Routes>
             <Route index path="/home" element={<Navigate to="/" replace />} />
-            <Route index element={<Home />} />
-            <Route path="/products" element={<ProductsPage />}>
-              <Route index element={<div>Type</div>} />
-              <Route path=":invoiceId" element={<div>Type</div>} />
+            <Route index element={<HomePage />} />
+            <Route path="/products">
+              <Route index element={<ProductsPage />} />
+              <Route path=":productId" element={<ProductDetailPage />} />
             </Route>
-            <Route path="/*" element={<div>Não encontrado</div>} />
+            <Route path="/*" element={<NotFoundPage />} />
           </Routes>
         </App>
       </QueryClientProvider>

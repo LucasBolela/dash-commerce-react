@@ -1,9 +1,9 @@
 import { ListProductsProvider } from "@/providers/products/products-provider";
-import Container from "@/layout/Container";
-import SearchBar from "./search";
-import { FilterProducts } from "./filters";
+import Container from "@/components/layout/Container";
+import SearchBar from "../../components/products/search";
+import { FilterProducts } from "../../components/products/filters";
 
-import ListProducts from "./list-products";
+import ListProducts from "../../components/products/list-products";
 
 export default function ProductsPage() {
   return (

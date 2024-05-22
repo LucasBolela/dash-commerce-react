@@ -1,10 +1,10 @@
-import Container from "@/layout/Container";
-import { CarouselPlugin } from "../commons/carrousel-products";
+import Container from "@/components/layout/Container";
+import { CarouselPlugin } from "../components/commons/carrousel-products";
 import { ListHomeProvider } from "@/providers/home/home-provider";
-import HomeContent from "./content";
-import HomeGreatings from "./greatings";
+import HomeContent from "../components/home/content";
+import HomeGreatings from "../components/home/greatings";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <ListHomeProvider>
       <>
