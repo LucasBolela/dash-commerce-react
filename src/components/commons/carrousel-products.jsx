@@ -11,6 +11,7 @@ import {
 import { useListHome } from "@/providers/home/home-provider";
 import { Loader2Icon } from "lucide-react";
 import { Badge } from "../ui/badge";
+import { formatImgUrl } from "@/lib/utils";
 
 export function CarouselPlugin() {
   const plugin = useRef(Autoplay({ delay: 2000, stopOnInteraction: true }));
@@ -43,7 +44,9 @@ export function CarouselPlugin() {
           >
             {product.images.length ? (
               <a
-                style={{ backgroundImage: `url('${product.images[0]}')` }}
+                style={{
+                  backgroundImage: `url('${formatImgUrl(product.images[0])}')`,
+                }}
                 className={`flex flex-col justify-between p-0 bg-center bg-cover h-full rounded-lg  cursor-pointer`}
                 href={`/product/${product.id}`}
               >

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 // import AddToCart from "./AddToCart";
-import { formatCurrency, textShrink } from "@/lib/utils";
+import { formatCurrency, formatImgUrl, textShrink } from "@/lib/utils";
 import { Badge } from "../ui/badge";
 import { Button } from "../ui/button";
 import { ShoppingBagIcon } from "lucide-react";
@@ -19,7 +19,7 @@ function ProductCard({
       <Link to={`${id}`}>
         <img
           className="w-full rounded-lg self-stretch h-72 min-h-52 mb-7 object-cover"
-          src={images[0]}
+          src={formatImgUrl(images[0])}
           alt=""
         />
       </Link>

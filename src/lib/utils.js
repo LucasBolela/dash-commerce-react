@@ -13,3 +13,10 @@ export const formatCurrency = (value) => value.toLocaleString("pt-BR", {
   style: "currency",
   currency: "BRL",
 })
+
+export const formatImgUrl = (url) => {
+  if (url.length && url[0] == "h")
+    return url
+
+  return url.substring(url.indexOf("http"), url.lastIndexOf('.jpeg') + 5)
+}
